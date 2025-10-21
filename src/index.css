@@ -1,0 +1,39 @@
+/* src/index.css or src/App.css */
+
+/* --- GLOBAL RESET FOR FULL-PAGE COVERAGE --- */
+:root {
+  /* This prevents the horizontal scrollbar if you use 100vw later */
+  box-sizing: border-box; 
+}
+
+html, body, #root {
+  /* Remove default browser margins/paddings */
+  margin: 0;
+  padding: 0;
+  
+  /* Ensure these elements span the full viewport */
+  width: 100%;
+  min-height: 100%;
+  
+  /* Apply totally black theme globally */
+  background: #000000;
+  color: #F5F5F5;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+} 
+/* ------------------------------------------ */
+
+/* Remove blur effects for clean black theme */
+
+/* Ensure all content appears above the blur effects */
+#root {
+  position: relative;
+  z-index: 1;
+}
