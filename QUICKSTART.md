@@ -51,8 +51,8 @@ uvicorn app.main:app --reload
 
 4. **Frontend Setup** (in a new terminal)
 ```powershell
-# Navigate to project root
-cd ..
+# Navigate to frontend directory
+cd frontend
 
 # Install dependencies
 npm install
@@ -81,6 +81,9 @@ mysql -u root -p delivery_db < backend/init_db.sql
 
 ### Frontend Issues
 ```powershell
+# Navigate to frontend directory first
+cd frontend
+
 # Clear npm cache and reinstall
 npm cache clean --force
 rm -rf node_modules

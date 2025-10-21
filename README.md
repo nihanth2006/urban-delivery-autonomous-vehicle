@@ -14,7 +14,12 @@ A modern web application for parcel delivery services with real-time tracking an
 ```
 MY_PROJECT/
 ├── backend/         # FastAPI backend
-└── frontend/        # React frontend (Vite)
+├── frontend/        # React frontend (Vite)
+│   ├── src/         # React source code
+│   ├── public/      # Static assets
+│   ├── package.json # Frontend dependencies
+│   └── vite.config.js # Vite configuration
+└── ai-urban-delivery-autonomous-vehicle/ # Future AI features
 ```
 
 ## Setup Instructions
@@ -77,9 +82,9 @@ The backend will be running at `http://localhost:8000`
 
 ### 3. Frontend Setup
 
-1. Navigate to the project root directory:
+1. Navigate to the frontend directory:
 ```bash
-cd ..  # if you're in the backend directory
+cd frontend
 ```
 
 2. Install dependencies:
@@ -100,9 +105,9 @@ In the project directory, you can run:
 
 ### Frontend
 
-- `npm run dev` - Runs the app in development mode
-- `npm run build` - Builds the app for production
-- `npm run preview` - Previews the production build
+- `npm run dev` - Runs the app in development mode (from frontend/ directory)
+- `npm run build` - Builds the app for production (from frontend/ directory)
+- `npm run preview` - Previews the production build (from frontend/ directory)
 
 ### Backend
 
@@ -135,8 +140,9 @@ Once the backend is running, you can access:
    - Ensure database and user are created correctly
 
 2. Node.js/npm Issues
+   - Navigate to frontend directory: `cd frontend`
    - Clear npm cache: `npm cache clean --force`
-   - Delete node_modules and reinstall: 
+   - Delete node_modules and reinstall:
      ```bash
      rm -rf node_modules
      npm install
