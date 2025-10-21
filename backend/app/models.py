@@ -15,10 +15,10 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True)
-    firebase_uid = Column(String, unique=True, index=True)
-    full_name = Column(String)
-    phone_number = Column(String)
+    email = Column(String(255), unique=True, index=True)
+    firebase_uid = Column(String(255), unique=True, index=True)
+    full_name = Column(String(255))
+    phone_number = Column(String(20))
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
@@ -30,11 +30,11 @@ class Product(Base):
     __tablename__ = "products"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    description = Column(String)
+    title = Column(String(255), index=True)
+    description = Column(String(1000))
     price = Column(Float)
-    category = Column(String, index=True)
-    image_url = Column(String)
+    category = Column(String(100), index=True)
+    image_url = Column(String(500))
     stock = Column(Integer)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
@@ -50,7 +50,7 @@ class Order(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
     status = Column(Enum(OrderStatus), default=OrderStatus.PENDING)
     total_amount = Column(Float)
-    shipping_address = Column(String)
+    shipping_address = Column(String(500))
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
