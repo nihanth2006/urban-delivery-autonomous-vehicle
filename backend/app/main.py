@@ -12,7 +12,7 @@ app = FastAPI()
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],  # Your Vite React app's ports
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://urban-delivery-autonomous-vehicle-3.vercel.app"],  # Your Vite React app's ports and deployed frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
